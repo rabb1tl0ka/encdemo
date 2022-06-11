@@ -127,7 +127,7 @@ parser.add_argument('function')
 parser.add_argument('arguments', nargs='*')
 args = parser.parse_args()
 
-dispatch[args.function](*args.arguments)
+dispatch[args.function](*args.arguments) 
 
 # python3 encdemo.py encrypt mypassword ./pvkey.pem ./somefile.txt ./secretfile.txt
 # python3 encdemo.py decrypt mypassword ./pvkey.pem ./secretfile.txt ./secretreveal.txt
