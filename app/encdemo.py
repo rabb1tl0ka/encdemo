@@ -96,8 +96,6 @@ def decrypt(password, pem_path, file_to_decrypt_path, file_decrypted_path):
             file_decrypted.write(plaintext)
 
 def decrypt_msg(password, pem_path, msg_to_decrypt):
-    print(type(msg_to_decrypt))
-    print(bytearray(msg_to_decrypt, encoding="UTF-8"))
 
     with open(pem_path, "rb") as key_file:
         private_key = serialization.load_pem_private_key(
@@ -119,7 +117,7 @@ def decrypt_msg(password, pem_path, msg_to_decrypt):
 dispatch = {
     'new_key': new_key,     #new_key(password, filepath)
     'encrypt': encrypt,     #encrypt(pem_path, file_to_encrypt_path, file_encrypted_path)
-    'decrypt': decrypt,
+    'decrypt': decrypt,     #python3 encdemo.py decrypt mypassword ./pvkey.pem ./secretfile.txt ./secretreveal.txt
     'encrypt_msg': encrypt_msg,
     'decrypt_msg': decrypt_msg,
 }
